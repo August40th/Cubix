@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cubix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Cub<em>ix</em></h1>
+  <p class="sub">Twenty-seven diamonds, one hidden cube. Click a glowing point to spin the three tiles around it 60° at a time — <kbd>shift</kbd>+click (or right-click) turns the other way. Rebuild the block.</p>
+</header>
+
+<div class="board-wrap">
+  <svg id="board" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+
+<div class="controls">
+  <button class="primary" id="btn-easy">Shuffle · easy</button>
+  <button id="btn-hard">Shuffle · hard</button>
+  <button id="btn-undo">Undo</button>
+  <button id="btn-reset">Reset</button>
+</div>
+
+<div class="status" id="status">
+  <span class="dot"></span>
+  <span id="status-text">Solved — click Shuffle to scramble the cube.</span>
+</div>
+
+<div class="palette">
+  <div class="swatch"><input type="color" id="col-top"><span>Top face</span></div>
+  <div class="swatch"><input type="color" id="col-left"><span>Left face</span></div>
+  <div class="swatch"><input type="color" id="col-right"><span>Right face</span></div>
+  <div class="swatch"><input type="color" id="col-dot"><span>Rotation points</span></div>
+  <button class="ghost" id="btn-random-colors">Random colors</button>
+  <button class="ghost" id="btn-default-colors">Default colors</button>
+</div>
+
+<footer>
+  Cubix is a digital puzzle inspired by <strong>Propp Lozenge</strong>, invented by James&nbsp;Propp and designed by Oskar&nbsp;van&nbsp;Deventer, built on the mathematics of lozenge tilings. Every click is a genuine 60° turn of the three tiles around that point; three turns in a row reproduce the classic 180° "flip" used to reshape the stack. Every scramble is guaranteed solvable.
+</footer>
+
+<!--
+  Plain scripts (not ES modules) so this page works when opened by double-click
+  from disk. ORDER MATTERS: each file uses things defined by the files above it.
+-->
+<script src="js/config.js"></script>
+<script src="js/geometry.js"></script>
+<script src="js/state.js"></script>
+<script src="js/colors.js"></script>
+<script src="js/render.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
